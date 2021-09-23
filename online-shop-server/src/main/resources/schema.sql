@@ -5,7 +5,7 @@ CREATE TABLE user (
     lastName VARCHAR(100),
     phoneNumber VARCHAR(15) UNIQUE,
     email VARCHAR(50) UNIQUE,
-    password VARCHAR(32) NOT NULL,
+    password ARRAY NOT NULL,
     registeredAt DATE NOT NULL
 );
 
@@ -15,7 +15,6 @@ CREATE TABLE product (
     id BIGINT IDENTITY PRIMARY KEY,
     userId BIGINT NOT NULL,
     title VARCHAR(100) NOT NULL,
-    type SMALLINT NOT NULL DEFAULT 0,
     price FLOAT NOT NULL DEFAULT 0,
     createdAt DATE NOT NULL,
     content CLOB,
