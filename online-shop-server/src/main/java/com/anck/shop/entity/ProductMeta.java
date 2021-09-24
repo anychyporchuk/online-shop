@@ -3,79 +3,46 @@ package com.anck.shop.entity;
 import javax.persistence.*;
 
 import com.anck.shop.entity.SchemaMetadata.ProductMetaTable;
+import lombok.*;
 
+import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
+@Setter
+@ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = SchemaMetadata.ProductMetaTable.TABLENAME)
-public class ProductMeta {
-    private Long id;
-    private Product product;
-    private String key;
-    private String value;
-
-    public ProductMeta() {
-    }
-
+public class ProductMeta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = ProductMetaTable.ID)
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = ProductMetaTable.PRODUCTID)
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
+    @ToString.Exclude
+    private Product product;
 
     @Column(name = ProductMetaTable.KEY)
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
+    private String key;
 
     @Column(name = ProductMetaTable.VALUE)
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
+    private String value;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductMeta that = (ProductMeta) o;
-        return id.equals(that.id) && product.equals(that.product) && key.equals(that.key) && value.equals(that.value);
+        return id.equals(that.id) && key.equals(that.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, product, key, value);
-    }
-
-    @Override
-    public String toString() {
-        return "ProductMeta{" +
-                "id=" + id +
-                ", product=" + product +
-                ", key='" + key + '\'' +
-                ", value='" + value + '\'' +
-                '}';
+        return Objects.hash(id, key);
     }
 }
