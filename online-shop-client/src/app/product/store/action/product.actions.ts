@@ -6,12 +6,14 @@ export enum ActionTypes {
   AddToCart = '[Product] Add to cart',
   RemoveFromCart = '[Product] Remove from cart',
   LoadItems = '[Products] Load items from server',
+  ClearItems = '[Products] Clear items',
   LoadSuccess = '[Products] Load success',
 }
 
 export const loadProducts = createAction(
   ActionTypes.LoadItems,
-  (pagination: Pagination) => ({pagination})
+  (title: string, pagination: Pagination) => ({title, pagination}),
+  
 );
 
 export const loadProductsSuccess = createAction(
@@ -33,3 +35,7 @@ export const removeProductFromCart = createAction(
   ActionTypes.RemoveFromCart,
   (product: Product) => ({product})
 );
+
+export const clearProductsBeforeSearch = createAction(
+  ActionTypes.ClearItems
+)

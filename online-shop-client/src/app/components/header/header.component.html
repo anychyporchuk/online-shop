@@ -1,20 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <fa-icon [icon]="faCoffee"></fa-icon>
           Baburochka
         </a>
       </nav>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="products">Каталог</a>
         </div>
         <form class="form-inline">
-            <div class="input-group has-search">
-                <fa-icon class="form-control-feedback" aria-hidden="true" [icon]="faSearch"></fa-icon>
-                <input class="form-control mr-sm-2" type="search" placeholder="Я ищу..." aria-label="Search" >
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
+            <div class="input-group has-search ">
+                <fa-icon class="form-control-feedback" [icon]="faSearch"></fa-icon>
+                <input class="form-control mr-sm-auto" type="search" [(ngModel)]="searchTitle" name="searchTitle" placeholder="Я ищу..." aria-label="Search" >
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="searchProducts()" type="submit">Найти</button>
             </div>
         </form>
     </div>

@@ -23,6 +23,7 @@ export const customerReducer = createReducer(
   on(ProductActions.loadProductsSuccess, (state, {products}) => ({...state, products: [...state.products, ...products]})),
   on(ProductActions.addProduct, (state: ProductState, {product}) => ({...state, products: [...state.products, product]})),
   on(ProductActions.addProductToCart, (state, {product}) => ({...state, cart: [...state.cart, product]})),
+  on(ProductActions.clearProductsBeforeSearch, (state) => ({...state, products: []})),
   //on(ProductActions.removeProductFromCart, (state, {product}) => ({...state, cart: [...state.cart.filter(item => item.name != product.name)]}))
 )
 

@@ -26,4 +26,10 @@ public class ProductServiceImpl implements ProductService {
         Page<Product> products =  productRepository.findAll(paging);
         return new PageImpl<ProductDto>(productMapper.map(products.getContent()), paging, products.getTotalElements());
     }
+
+    @Override
+    public Page<ProductDto> getProductsByTitle(String title, Pageable paging) {
+        Page<Product> products =  productRepository.findByTitleContainingIgnoreCase(title, paging);
+        return new PageImpl<ProductDto>(productMapper.map(products.getContent()), paging, products.getTotalElements());
+    }
 }

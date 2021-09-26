@@ -13,6 +13,7 @@ import { selectProducts } from 'src/app/product/store/selector/product.selectors
 })
 export class ProductListComponent implements OnInit {
 
+  title!: string;
   products!: Observable<Product[]>;
 
   constructor(private store: Store<ProductState>) { }
@@ -26,14 +27,14 @@ export class ProductListComponent implements OnInit {
     this.page += 1;
     console.log(`Page${this.page}`);
     if (this.page <= 5) {
-      this.store.dispatch(loadProducts({ page: this.page, limit: this.limit }));
+      this.store.dispatch(loadProducts(this.title, { page: this.page, limit: this.limit }));
     }
   }
 
   ngOnInit(): void {
     console.log("ProducList ngOnInit");
     this.products = this.store.pipe(select(selectProducts));
-    this.store.dispatch(loadProducts({page: 1, limit:20}));
+    this.store.dispatch(loadProducts("", {page: 1, limit:20}));
   }
 
 }
