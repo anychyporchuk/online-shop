@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Product } from 'src/app/models/product';
 import { addProductToCart, removeProductFromCart } from '../store/action/product.actions';
 import { ProductState } from '../store/reducer/product.reducer';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-view',
@@ -10,11 +11,12 @@ import { ProductState } from '../store/reducer/product.reducer';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
-
+  faCartPlus = faCartPlus;
   inCart = false;
   @Input() product!: Product;
 
-  constructor(private store:Store<ProductState>) { }
+  constructor(private store:Store<ProductState>) { 
+  }
 
   ngOnInit(): void {
   }

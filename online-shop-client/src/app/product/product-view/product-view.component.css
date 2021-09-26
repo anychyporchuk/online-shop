@@ -1,73 +1,40 @@
-.product-actions__add, .product-actions__remove {
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 32px;
-    width: 32px;
+.card {
+    float: left;
+    width: 24%;
+    padding: .75rem;
+    margin-bottom: 2rem;
+    margin-left: 1%;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     cursor: pointer;
 }
+
+.card:hover {
+    transform: scale(1.05);
+ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+}
+
+
+
+.card-text {
+    font-size: 85%;
+}
+
 .product-actions__add:hover, .product-actions__remove:hover {
     transform: scale(1.1);
 }
-.product-actions__add img, .product-actions__remove img {
-    width: 16px;
-    height: 16px;
-}
-.product {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    margin: 0 15px 30px 0;
-    width: 240px;
-    max-height: 400px;
-    height: 320px;
-}
-.product:hover {
-    transform: scale(1.05);
-    border: 1px solid black;
-}
+
 .product:hover .product-actions {
     display: flex;
 }
-.product-image {
-    max-width: 100%;
-    width: 180px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    height: 230px;
-    object-fit: cover;
-}
-.product-details {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 15px;
-}
-.product-details__price {
-    font-weight: 500;
-    opacity: 0.7;
-    letter-spacing: 1px;
-    margin: 0;
-}
-.product-details__name {
-    opacity: 0.8;
-    font-weight: 500;
-    margin: 0;
-}
-.product-description {
-    padding: 10px 15px;
-}
-.product-description p {
-    opacity: 0.6;
-    margin: 0;
-}
-.product-actions {
-    display: none;
-    justify-content: flex-end;
-    padding: 0 15px;
-}
 .product-actions__add {
-    border: 2px solid #34badb;
+    background: blue;
 }
 .product-actions__remove {
-    border: 2px solid indianred;
+    background: red;
 }

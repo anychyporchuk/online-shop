@@ -1,3 +1,11 @@
-<div class="product-list">
+<div class="container">
+    <div
+    class="card-deck"
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollEnd()"
+>
     <app-product-view *ngFor="let product of products | async;" [product]="product"></app-product-view>
+    </div>
 </div>

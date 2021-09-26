@@ -4,20 +4,135 @@ VALUES(1, 'Artem', 'Nychyporchuk', '888888', 'aa@example.com', '1234', CURRENT_T
 
 
 --PRODUCT--
-INSERT INTO product(id, user_id, title, price, created_at, content)
-VALUES(1, 1, 'Product 1', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content'),
-      (2, 1, 'Product 2', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content');
-
---CATEGORY-
-INSERT INTO category(id, parent_id, title, content)
-VALUES(1, null, 'Category 1', 'Category 1 Content'),
-      (2, null, 'Category 2', 'Category 2 Content'),
-      (3, 1, 'Category 1.1', 'Subcategory 1 of Category 1 Content');
-
---PRODUCT_CATEGORY--
-INSERT INTO product_category(product_id, category_id)
-VALUES (1, 1);
+INSERT INTO product(id, user_id, title, price, created_at, content, image)
+VALUES(1, 1, 'Dallmayr prodomo', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image3.png'),
+      (2, 1, 'Dallmayr prodomo', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image3.png'),
+      (3, 1, 'Movenpick', 11.43, CURRENT_TIMESTAMP(), 'Product 3 Content', '/assets/images/products/coffee/image16.jpg'),
+      (4, 1, 'Movenpick', 14.11, CURRENT_TIMESTAMP(), 'Product 4 Content', '/assets/images/products/coffee/image16.jpg'),
+      (5, 1, 'Jacobs Kronung', 11.43, CURRENT_TIMESTAMP(), 'Product 5 Content', '/assets/images/products/coffee/image17.jpg'),
+      (6, 1, 'Alvorada Italiano', 14.11, CURRENT_TIMESTAMP(), 'Product 6 Content', '/assets/images/products/coffee/image2.jpg'),
+      (7, 1, 'G.Monti', 11.43, CURRENT_TIMESTAMP(), 'Product 7 Content', '/assets/images/products/coffee/image21.jpg'),
+      (8, 1, 'Alvorada Wiener Kaffee', 14.11, CURRENT_TIMESTAMP(), 'Product 8 Content', '/assets/images/products/coffee/image9.jpg'),
+      (9, 1, 'Eilles', 14.11, CURRENT_TIMESTAMP(), 'Product 9 Content', '/assets/images/products/coffee/image1.jpg'),
+      (10, 1, 'Ronelli', 11.43, CURRENT_TIMESTAMP(), 'Product 10 Content', '/assets/images/products/coffee/image23.jpg'),
+      (11, 1, 'Product 11', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (12, 1, 'Product 12', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (13, 1, 'Product 13', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (14, 1, 'Product 14', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (15, 1, 'Product 15', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (16, 1, 'Product 16', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (17, 1, 'Product 17', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (18, 1, 'Product 18', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (19, 1, 'Product 19', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (20, 1, 'Product 20', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (21, 1, 'Product 21', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (22, 1, 'Product 22', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (23, 1, 'Product 23', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (24, 1, 'Product 24', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (25, 1, 'Product 25', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (26, 1, 'Product 26', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (27, 1, 'Product 27', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (28, 1, 'Product 28', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (29, 1, 'Product 29', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (30, 1, 'Product 30', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (31, 1, 'Product 31', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (32, 1, 'Product 32', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (33, 1, 'Product 33', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (34, 1, 'Product 34', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (35, 1, 'Product 35', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (36, 1, 'Product 36', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (37, 1, 'Product 37', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg'),
+      (38, 1, 'Product 38', 11.43, CURRENT_TIMESTAMP(), 'Product 1 Content', '/assets/images/products/coffee/image1.jpg'),
+      (39, 1, 'Product 39', 14.11, CURRENT_TIMESTAMP(), 'Product 2 Content', '/assets/images/products/coffee/image1.jpg');
+      ;
 
 --PRODUCT_META--
 INSERT INTO product_meta(id, product_id, key, value)
-VALUES (1, 1, 'Product 1 Key 1', 'Productr 1 Value 1');
+VALUES (1, 1, 'Location', 'Германия'),
+       (2, 1, 'Type', 'Зерно'),
+       (3, 1, 'Roasting', 'Cредняя (3) степень обжарки'),
+       (4, 1, 'Weight', '500 гр.'),
+       (5, 1, 'Composition', '100% арабика'),
+       (6, 2, 'Location', 'Германия'),
+       (7, 2, 'Type', 'Молотый'),
+       (8, 2, 'Roasting', 'Cредняя (3) степень обжарки'),
+       (9, 2, 'Weight', '500 гр.'),
+       (10, 2, 'Composition', '100% арабика'),
+       (11, 3, 'Location', 'Германия'),
+       (12, 3, 'Type', 'Зерно'),
+       (13, 3, 'Roasting', 'Cредняя (3) степень обжарки'),
+       (14, 3, 'Weight', '500 гр.'),
+       (15, 3, 'Composition', '100% арабика'),
+       (16, 4, 'Location', 'Германия'),
+       (17, 4, 'Type', 'Молотый'),
+       (18, 4, 'Roasting', 'Cредняя (3) степень обжарки'),
+       (19, 4, 'Weight', '500 гр.'),
+       (20, 4, 'Composition', '100% арабика'),
+       (21, 5, 'Location', 'Германия'),
+       (22, 5, 'Type', 'Зерно'),
+       (23, 5, 'Roasting', 'Темная (4) степень обжарки'),
+       (24, 5, 'Weight', '500 гр.'),
+       (25, 5, 'Composition', '100% арабика'),
+       (26, 6, 'Location', 'Австрия'),
+       (27, 6, 'Type', 'Зерно'),
+       (28, 6, 'Roasting', 'Темная (4) степень обжарки'),
+       (29, 6, 'Weight', '1000 гр.'),
+       (30, 6, 'Composition', '100% арабика'),
+       (31, 7, 'Location', 'Италия'),
+       (32, 7, 'Type', 'Зерно'),
+       (33, 7, 'Roasting', 'Темная (4) степень обжарки'),
+       (34, 7, 'Weight', '1000 гр.'),
+       (35, 7, 'Composition', '100% арабика'),
+       (36, 8, 'Location', 'Австрия'),
+       (37, 8, 'Type', 'Зерно'),
+       (38, 8, 'Roasting', 'Cредняя (3) степень обжарки'),
+       (39, 8, 'Weight', '1000 гр.'),
+       (40, 8, 'Composition', '80% арабика, 20% робуста'),
+       (41, 9, 'Location', 'Германия'),
+       (42, 9, 'Type', 'Молотый'),
+       (43, 9, 'Roasting', 'Темная (4) степень обжарки'),
+       (44, 9, 'Weight', '500 гр.'),
+       (45, 9, 'Composition', '100% арабика'),
+       (46, 10, 'Location', 'Польша'),
+       (47, 10, 'Type', 'Молотый'),
+       (48, 10, 'Roasting', 'Темная (5) степень обжарки'),
+       (49, 10, 'Weight', '250 гр.'),
+       (50, 10, 'Composition', '50% арабика, 50% робуста');
+
+
+--CATEGORY-
+INSERT INTO category(id, parent_id, title, content)
+VALUES(1, null, 'Coffee', 'Coffee Content');
+
+--PRODUCT_CATEGORY--
+INSERT INTO product_category(product_id, category_id)
+VALUES (1, 1),
+      (2, 1),
+      (3, 1),
+      (4, 1),
+      (5, 1),
+      (6, 1),
+      (7, 1),
+      (8, 1),
+      (9, 1),
+      (10, 1),
+      (11, 1),
+      (12, 1),
+      (13, 1),
+      (14, 1),
+      (15, 1),
+      (16, 1),
+      (17, 1),
+      (18, 1),
+      (19, 1),
+      (20, 1),
+      (21, 1),
+      (22, 1),
+      (23, 1),
+      (24, 1),
+      (25, 1);
+
+INSERT INTO category_meta(id, category_id, meta_key)
+VALUES (1, 1, 'Location'),
+       (2, 1, 'Type');
+

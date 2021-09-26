@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
-import { map, mergeMap, catchError, switchMap } from 'rxjs/operators';
+import { map, mergeMap, catchError } from 'rxjs/operators';
 
 import { ProductService } from '../../services/product.service';
 import { ActionTypes, loadProducts, loadProductsSuccess } from '../action/product.actions';
@@ -17,7 +17,7 @@ export class ProductEffects {
 
   loadProducts$ = createEffect(() => this.actions$.pipe(
     ofType(loadProducts),
-    switchMap(() => this.productService.getAll()
+    mergeMap(action => this.productService.getAll(action.pagination.page, action.pagination.limit)
     .pipe(
       map(products => (loadProductsSuccess(products))),
       catchError(() => EMPTY)

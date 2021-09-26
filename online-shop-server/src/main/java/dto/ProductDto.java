@@ -2,8 +2,10 @@ package dto;
 
 import lombok.*;
 
+import java.util.List;
+
 @Data
-@EqualsAndHashCode(/*callSuper = true*/)
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -12,7 +14,6 @@ public class ProductDto {
     private String title;
     private Float price;
     private String content;
-    private Long userId;
-    //private Set<CategoryDto> categories;
-    //private Set<ProductMetaDto> metas;
+    private String imageUrl;
+    private List<ProductMetaDto> metas;
 }

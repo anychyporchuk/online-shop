@@ -44,6 +44,9 @@ public class Product implements Serializable {
     @Column(name = ProductTable.CONTENT)
     private String content;
 
+    @Column(name = "image")
+    private String image;
+
     @ManyToMany(mappedBy = "products")
     private Set<Category> categories = new HashSet<>();
 

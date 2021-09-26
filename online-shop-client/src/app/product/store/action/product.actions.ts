@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Product } from 'src/app/models/product';
+import { PaginatedResult, Pagination, Product } from 'src/app/models/product';
 
 export enum ActionTypes {
   Add = '[Product] Add New',
@@ -10,7 +10,8 @@ export enum ActionTypes {
 }
 
 export const loadProducts = createAction(
-  ActionTypes.LoadItems
+  ActionTypes.LoadItems,
+  (pagination: Pagination) => ({pagination})
 );
 
 export const loadProductsSuccess = createAction(

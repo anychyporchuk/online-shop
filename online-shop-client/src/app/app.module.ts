@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { ProductModule } from './product/product.module';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot(),
     EffectsModule.forFeature(),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    ProductModule
+    ProductModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,8 +12,9 @@ export class ProductService {
   baseUrl = 'http://localhost:4000/products';
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Product[]> {
+  getAll(page = 1, limit = 20): Observable<Product[]> {
     console.log("trying to search");
-    return this.http.get<Product[]>(this.baseUrl);
+ 
+    return this.http.get<Product[]>(`http://localhost:8080/products?page=${page - 1}&limit=${limit}`);
   }
 }

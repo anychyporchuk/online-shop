@@ -5,6 +5,7 @@ import { ProductEffects } from './store/effect/product.effects';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { StoreModule } from '@ngrx/store';
 import { productFeatureKey, reducer } from './store/reducer/product.reducer';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -15,7 +16,8 @@ import { productFeatureKey, reducer } from './store/reducer/product.reducer';
   imports: [
     CommonModule,
     StoreModule.forFeature(productFeatureKey, reducer),
-    EffectsModule.forFeature([ProductEffects])
+    EffectsModule.forFeature([ProductEffects]),
+    FontAwesomeModule
   ],
   exports: [
     ProductViewComponent

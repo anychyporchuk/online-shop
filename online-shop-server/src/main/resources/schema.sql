@@ -15,10 +15,18 @@ CREATE TABLE product (
     id BIGINT IDENTITY PRIMARY KEY,
     user_id BIGINT NOT NULL,
     title VARCHAR(100) NOT NULL,
+    image VARCHAR(200) NOT NULL,
     price FLOAT NOT NULL DEFAULT 0,
     created_at TIMESTAMP NOT NULL,
     content CLOB,
     CONSTRAINT fk_product_user FOREIGN KEY (user_id) REFERENCES user (id)
+);
+
+DROP TABLE IF EXISTS category_meta;
+CREATE TABLE category_meta (
+    id BIGINT IDENTITY PRIMARY KEY,
+    category_id BIGINT NOT NULL,
+    meta_key VARCHAR(50) NOT NULL
 );
 
 DROP TABLE IF EXISTS product_meta;
@@ -39,10 +47,10 @@ CREATE TABLE category (
     CONSTRAINT fk_category_parent FOREIGN KEY (parent_id) REFERENCES category (id)
 );
 
-DROP TABLE product_category IF EXISTS;
+DROP TABLE IF EXISTS product_category;
 CREATE TABLE product_category (
     product_id BIGINT NOT NULL,
     category_id BIGINT NOT NULL,
     CONSTRAINT fk_pc_product FOREIGN KEY (product_id) REFERENCES product (id),
     CONSTRAINT fk_pc_category FOREIGN KEY (category_id) REFERENCES category (id)
-)
+);

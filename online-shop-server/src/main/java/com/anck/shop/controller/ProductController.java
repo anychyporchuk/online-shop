@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/")
 @Slf4j
@@ -22,10 +24,10 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public ResponseEntity<Page<ProductDto>> getAllProducts(
+    public ResponseEntity<List<ProductDto>> getAllProducts(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "3") int size
+            @RequestParam(defaultValue = "3") int limit
     ) {
-        return new ResponseEntity<>(productService.getAllProducts(PageRequest.of(page, size)), HttpStatus.OK);
+        return new ResponseEntity<>(productService.getAllProducts(PageRequest.of(page, limit)).getContent(), HttpStatus.OK);
     }
 }
