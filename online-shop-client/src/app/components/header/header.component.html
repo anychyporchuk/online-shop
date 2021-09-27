@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <fa-icon [icon]="faCoffee"></fa-icon>
-          Baburochka
+            <fa-icon class="fa-1g" [icon]="faCoffee"></fa-icon>
+            BABUROCHKA
         </a>
       </nav>
     <div class="navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="products">Каталог</a>
+            <a class="nav-item nav-link" routerLink="products">Каталог</a>
         </div>
         <form class="form-inline">
             <div class="input-group has-search ">
@@ -17,4 +17,8 @@
             </div>
         </form>
     </div>
+    <a routerLink="cart" class="btn btn-primary-outline">
+        <fa-icon style="color:white" class="fa-1g" [icon]="faShoppingCart"></fa-icon>
+        <span class="badge" *ngIf="cart.length > 0">{{ cart.length }}</span>    
+    </a>
   </nav>

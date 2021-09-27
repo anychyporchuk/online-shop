@@ -1,5 +1,6 @@
 .navbar-brand {
     margin-left: 3%;
+    font-size: 1.5rem;
 }
 
 .has-search .form-control {
@@ -17,3 +18,24 @@
     pointer-events: none;
     color: #aaa;
 }
+
+.btn-primary-outline {
+    background-color: transparent;
+    border-color: #ccc;
+    margin-right: 1%;
+  }
+
+  .badge {
+    height: 20px;
+    width: 20px;
+    font-size: 11px;
+    color: white;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 12px;
+    right: 4.1px;
+    border-radius: 50%;
+  }
